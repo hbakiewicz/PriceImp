@@ -1,0 +1,30 @@
+220 .
+USER 182
+331 Password required for 182
+PASS 182_POL
+230 Logged on
+TYPE I
+200 Type set to I
+SYST
+215 UNIX emulated by FileZilla
+PASV
+227 Entering Passive Mode (212,234,95,162,195,81)
+LIST
+150 Connection accepted
+226 Transfer OK
+PASV
+227 Entering Passive Mode (212,234,95,162,195,82)
+RETR Art2_20181015.dat
+150 Connection accepted
+226 Transfer OK
+DELE Art2_20181015.dat
+250 File deleted successfully
+PASV
+227 Entering Passive Mode (212,234,95,162,195,83)
+RETR Art_20181015.dat
+150 Connection accepted
+226 Transfer OK
+DELE Art_20181015.dat
+250 File deleted successfully
+QUIT
+221 Goodbye

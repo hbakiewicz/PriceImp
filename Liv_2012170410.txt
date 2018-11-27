@@ -1,0 +1,21 @@
+TypPolskichLiter:LA
+TypDok:HZC_ZMIANA
+NazwaHZC:null
+Data:01.01.2050
+DataDo:null
+DataOdCzas09:00
+Data3null
+Data3OdCzas:null
+SklepyHZC:0
+NazwaWystawcy:Zmiana Cen SP/ZAK z pliku excel :S18 PRICES_POL.xlsx
+AdresWystawcy:
+KodWystawcy:
+MiastoWystawcy:
+UlicaWystawcy:
+NIPWystawcy:
+BankWystawcy:
+KontoWystawcy:
+TelefonWystawcy:
+NrWystawcyWSieciSklepow:
+WystawcaToCentralaSieci:
+NrWystawcyObcyWSieciSklepow:
