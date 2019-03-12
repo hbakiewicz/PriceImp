@@ -23,6 +23,7 @@ import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.net.PrintCommandListener;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
@@ -98,7 +99,7 @@ public class FTPClientJac {
                         calcLiv(file.getName());
                     }
                     log.logEvent(Level.INFO, "Sprawdzam czy plik nie jest sprzedażą lub walidacją dostawy: " + file.getName());
-                    if (!file.getName().toUpperCase().contains("Ven") || !file.getName().toUpperCase().contains("Val") ) {
+                    if (!file.getName().toUpperCase().contains("Ven") || !file.getName().toUpperCase().contains("Val")) {
                         if (ftp.deleteFile(file.getName())) {
 
                             log.logEvent(Level.INFO, "Skasowano plik  : " + file.getName());
@@ -155,9 +156,25 @@ public class FTPClientJac {
             this.ftp.storeFile(hostDir + fileName, input);
         }
         log.logEvent(Level.INFO, "wysyłano  plik ");
-        ftp.logout();
-        ftp.disconnect();
+        File file = new File(fileName);
+        if(file.delete()){
+            log.logEvent(Level.INFO, "skasowano plik  " + fileName);
+        }
+        //ftp.logout();
+        //ftp.disconnect();
 
     }
+
+    
+    
+
+public void log_out () {
+        try {
+            ftp.logout();
+            ftp.disconnect();
+        } catch (IOException ex) {
+            Logger.getLogger(FTPClientJac.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
 
 }
